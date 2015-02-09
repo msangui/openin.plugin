@@ -5,9 +5,6 @@
     <description>Cordova OpenIn Plugin</description>
     <license>Apache 2.0</license>
     <keywords>cordova,device</keywords>
-    <js-module src="www/openIn.js" name="openIn">
-        <clobbers target="openIn" />
-    </js-module>
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="OpenIn">
