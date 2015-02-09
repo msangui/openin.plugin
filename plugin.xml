@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.msangui.openin" version="0.0.1">
+    <name>OpenIn</name>
+    <description>Cordova OpenIn Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,device</keywords>
+    <js-module src="www/openIn.js" name="openIn">
+        <clobbers target="openIn" />
+    </js-module>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="OpenIn">
+                <param name="ios-package" value="OpenIn"/>
+            </feature>
+        </config-file>
+        <source-file src="src/ios/AppDelegate+openin.m" />
+        <source-file src="src/ios/OpenIn.m" />
+
+        <header-file src="src/ios/AppDelegate+openin.h" />
+        <header-file src="src/ios/OpenIn.h" />
+    </platform>
+</plugin>
