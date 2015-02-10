@@ -11,5 +11,13 @@
 #import <Cordova/CDVPlugin.h>
 
 @interface OpenIn : CDVPlugin
+{
+	NSString *openedFileURL;
+}
+
+@property (nonatomic, copy) NSString *openedFileURL;
+
 	- (void)emitEvent:(NSString *)url;
+	- (void)getFileUrl:(CDVInvokedUrlCommand *)command;
+
 @end
