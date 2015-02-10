@@ -27,3 +27,29 @@ window.plugins.openIn.getFileUrl(function (fileUrl) {
 $ cordova plugin add https://github.com/msangui/openin.plugin
 ```
 
+### Note
+Keep in mind that you will need to modify your project's plist file. You'll need to add the file types you want to support to your [Document Types](https://developer.apple.com/library/prerelease/ios/documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html) key
+##### Example
+```xml
+...
+<key>CFBundleDocumentTypes</key>
+<array>
+    <dict>
+    ...
+    <key>CFBundleTypeName</key>
+    <string>Item 0</string>
+    <key>LSItemContentTypes</key>
+    <array>
+        ...
+        <string>com.adobe.pdf</string>
+        ...
+        <string>public.data</string>
+        <string>public.content</string>
+        ...
+    </array>
+    ...
+    </dict>
+</array>
+...
+```
+
