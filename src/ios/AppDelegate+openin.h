@@ -9,5 +9,6 @@
 #import "AppDelegate.h"
 
 @interface AppDelegate (file)
+- (id) getCommandInstance:(NSString*)className;
 
 @end

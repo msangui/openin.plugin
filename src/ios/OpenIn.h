@@ -11,5 +11,5 @@
 #import <Cordova/CDVPlugin.h>
 
 @interface OpenIn : CDVPlugin
-
+	- (void)emitEvent:(NSString *)url;
 @end

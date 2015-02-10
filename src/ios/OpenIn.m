@@ -10,4 +10,9 @@
 
 @implementation OpenIn
 
+- (void)emitEvent:(NSString *)url;
+{
+	NSString *js = [NSString stringWithFormat:@"cordova.fireDocumentEvent('openin.fileopened', {data:'%@'});", url];
+	[self.commandDelegate evalJs:js scheduledOnRunLoop:NO];
+}
 @end

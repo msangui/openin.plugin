@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.msangui.openin" version="0.0.1">
+        id="com.phonegap.plugins.OpenIn" version="0.0.1">
     <name>OpenIn</name>
     <description>Cordova OpenIn Plugin</description>
     <license>Apache 2.0</license>
-    <keywords>cordova,device</keywords>
+    <keywords>cordova,open in</keywords>
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="OpenIn">
