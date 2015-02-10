@@ -15,6 +15,7 @@
 	NSString *openedFileURL;
 }
 
+@property (nonatomic, copy) NSString *callbackId;
 @property (nonatomic, copy) NSString *openedFileURL;
 
 	- (void)emitEvent:(NSString *)url;

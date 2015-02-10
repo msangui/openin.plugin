@@ -10,6 +10,8 @@
 
 @implementation OpenIn
 
+@synthesize callbackId;
+
 - (void)emitEvent:(NSString *)url;
 {
 	self.openedFileURL = url;
@@ -17,10 +19,11 @@
 	[self.commandDelegate evalJs:js scheduledOnRunLoop:NO];
 }
 
-- (void)getFileUrl:(CDVInvokedUrlCommand *)command {
+- (void)getFileUrl:(CDVInvokedUrlCommand *)command;
 {
 	self.callbackId = command.callbackId;
 	CDVPluginResult *commandResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:self.openedFileURL];
 	[self.commandDelegate sendPluginResult:commandResult callbackId:self.callbackId];
 }
+
 @end

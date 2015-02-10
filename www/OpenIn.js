@@ -1,9 +1,12 @@
 var OpenIn = function() {};
 
 OpenIn.prototype.getFileUrl= function(successCallback, errorCallback) {
-  if (errorCallback == null) { errorCallback = function() {}}
+  if (errorCallback == null) {
+    errorCallback = function () {
+    }
+  }
 
-  if (typeof errorCallback != "function")  {
+  if (typeof errorCallback != "function") {
     console.log("OpenIn.register failure: failure parameter not a function");
     return;
   }
@@ -15,3 +18,15 @@ OpenIn.prototype.getFileUrl= function(successCallback, errorCallback) {
 
   cordova.exec(successCallback, errorCallback, "OpenIn", "getFileUrl", []);
 };
+
+if(!window.plugins) {
+  window.plugins = {};
+}
+if (!window.plugins.openIn) {
+  window.plugins.openIn = new OpenIn();
+}
+
+if (typeof module != 'undefined' && module.exports) {
+  module.exports = OpenIn;
+}
+
